@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: "Lucida Handwriting", sans-serif; /* Changed font to a Diary Style font */
+            text-align: center;
+            background-image: url('teddy.jpg'); /* Initial background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #valentine {
+            margin-top: 100px;
+            font-size: 24px;
+        }
+        #yes, #no {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #yes:hover, #no:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="valentine">
+        <p>Will you be my Valentine?</p>
+        <div id="choices">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <script>
+        let yesButton = document.getElementById('yes');
+        let noButton = document.getElementById('no');
+        let valentineText = document.getElementById('valentine');
+        let yesFontSize = 24;
+
+        yesButton.addEventListener('click', function() {
+            alert("Yay! Happy Valentine's Day!");
+        });
+
+        noButton.addEventListener('click', function() {
+            // Change the background image
+            let randomImageIndex = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3
+            document.body.style.backgroundImage = `url('teddy${randomImageIndex}.jpeg')`; // Assuming you have teddy1.jpg, teddy2.jpg, teddy3.jpg
+            // Change font size to make it more diary-like
+            valentineText.style.fontSize = `${yesFontSize}px`;
+            yesFontSize += 2;
+        });
+    </script>
+</body>
+</html>
